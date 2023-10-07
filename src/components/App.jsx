@@ -1,16 +1,14 @@
+import { AutoList } from './AutoList';
+
 export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
+        paddingLeft: 128,
+        paddingRight: 128,
       }}
     >
-      React homework template
+      <AutoList></AutoList>
     </div>
   );
 };
