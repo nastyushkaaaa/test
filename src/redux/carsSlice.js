@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars, addCarToFavorite } from './operations';
+import { fetchCars } from './operations';
 
 const carsSlice = createSlice({
   name: 'cars',
@@ -7,7 +7,6 @@ const carsSlice = createSlice({
     entities: [],
     status: null,
     error: null,
-    favourite: false,
   },
   extraReducers: {
     [fetchCars.pending]: state => {
@@ -20,18 +19,6 @@ const carsSlice = createSlice({
     },
     [fetchCars.rejected]: (state, { payload }) => {
       state.status = 'rejected';
-      state.error = payload;
-    },
-    [addCarToFavorite.pending]: state => {
-      state.status = 'addLoading';
-      state.error = null;
-    },
-    [addCarToFavorite.fulfilled]: (state, { payload }) => {
-      state.status = 'addResolved';
-      state.favourite = true;
-    },
-    [addCarToFavorite.rejected]: (state, { payload }) => {
-      state.status = 'addRejected';
       state.error = payload;
     },
   },

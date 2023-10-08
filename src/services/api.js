@@ -5,12 +5,3 @@ export async function fetchCars() {
   const response = await fetch(`${BASE_URL}/catalog`);
   return await response.json();
 }
-
-export async function addCarToFavorites(values) {
-  const response = await fetch(`${BASE_URL}/favorites`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(values),
-  });
-  return await response.json();
-}
